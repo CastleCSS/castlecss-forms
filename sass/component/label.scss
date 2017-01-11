@@ -1,4 +1,5 @@
-[class^="formlabel-"], [class*=" formlabel-"] {
+[class^="formlabel-"],
+[class*=" formlabel-"] {
 
 	.form-field {
 
@@ -14,7 +15,7 @@
 			z-index: 2;
 		}
 
-		&.has-focus label[for], 
+		&.has-focus label[for],
 		&.has-value label[for] {
 			transform: translateY(-100%);
 			top: 0;
@@ -29,11 +30,11 @@
 			left: $margin-default*4.5;
 		}
 	}
-
 }
 
 .formlabel-bottom {
-	input, textarea {
+	input,
+	textarea {
 		vertical-align: top;
 		padding: $padding-default;
 	}
@@ -47,8 +48,10 @@
 		z-index: 2;
 	}
 
-	.has-focus, .has-value {
-		input, textarea {
+	.has-focus,
+	.has-value {
+		input,
+		textarea {
 			padding: $padding-default/2 $padding-default/2 $padding-default*2 $padding-default;
 		}
 	}
@@ -56,7 +59,7 @@
 	.form-field {
 		line-height: 1;
 
-		&.has-focus label[for], 
+		&.has-focus label[for],
 		&.has-value label[for] {
 			transform: translateY(0);
 			color: $color04;
@@ -69,6 +72,7 @@
 }
 
 .label-left {
+	
 	.input-indicator {
 		left: inherit;
 		right: 0;

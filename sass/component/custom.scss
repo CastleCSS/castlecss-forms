@@ -11,7 +11,7 @@
 	input {
 		position: absolute;
 		z-index: -1;
-		opacity: 0; 
+		opacity: 0;
 	}
 
 	/* Show active control */
@@ -43,20 +43,27 @@
 /* Hover and focus states */
 .input-control:hover input ~ .input-indicator,
 .input-control input:focus ~ .input-indicator {
-	background: #ccc;
+	background: $color04;
 }
 
 /* Hover state whilst checked */
 .input-control:hover input:not([disabled]):checked ~ .input-indicator,
 .input-control input:checked:focus ~ .input-indicator {
-	background: #12637f;
+	background: $theme01;
 }
 
 /* Disabled state */
-.input-control input:disabled ~ .input-indicator {
-	pointer-events: none;
-	opacity: .6;
-	background: $color03;
+.input-control {
+
+	&.disabled {
+		color: $color03;
+	}
+	
+	input:disabled ~ .input-indicator {
+		pointer-events: none;
+		opacity: .6;
+		background: $color03;
+	}
 }
 
 /* Checkbox tick */
@@ -71,7 +78,7 @@
 		border: solid $color01;
 		border-width: 0 3px 3px 0;
 	}
-	
+
 	/* Disabled tick colour */
 	input:disabled ~ .input-indicator:after {
 		border: none;
