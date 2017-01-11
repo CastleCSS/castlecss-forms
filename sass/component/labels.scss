@@ -1,0 +1,81 @@
+[class^="formlabel-"], [class*=" formlabel-"] {
+
+	.form-field {
+
+		label[for] {
+			transition: $transition;
+			position: absolute;
+			color: $color02;
+			left: $margin-default;
+			top: $margin-default/2;
+			font-weight: normal;
+			line-height: $margin-default*2;
+			margin: 0;
+			z-index: 2;
+		}
+
+		&.has-focus label[for], 
+		&.has-value label[for] {
+			transform: translateY(-100%);
+			top: 0;
+			color: $color04;
+			font-size: 70%;
+			line-height: 15px;
+		}
+	}
+
+	.input-icon {
+		label[for] {
+			left: $margin-default*4.5;
+		}
+	}
+
+}
+
+.formlabel-bottom {
+	input, textarea {
+		vertical-align: top;
+		padding: $padding-default;
+	}
+
+	textarea {
+		padding-bottom: $padding-default;
+		box-sizing: border-box;
+	}
+
+	label {
+		z-index: 2;
+	}
+
+	.has-focus, .has-value {
+		input, textarea {
+			padding: $padding-default/2 $padding-default/2 $padding-default*2 $padding-default;
+		}
+	}
+
+	.form-field {
+		line-height: 1;
+
+		&.has-focus label[for], 
+		&.has-value label[for] {
+			transform: translateY(0);
+			color: $color04;
+			font-size: 65%;
+			line-height: 22px;
+			top: 100%;
+			margin-top: -$margin-default*1.5;
+		}
+	}
+}
+
+.label-left {
+	.input-indicator {
+		left: inherit;
+		right: 0;
+	}
+
+	.input-control {
+		padding-left: 0;
+		padding-right: $padding-default*2.5;
+	}
+}

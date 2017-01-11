@@ -1,0 +1,54 @@
+.select {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+
+	select {
+		cursor: pointer;
+		background: $color01;
+		appearance: none;
+
+		&:hover,
+		&:focus {
+			color: $color02;
+			border-color: #999;
+
+			~ .select-arrow {
+				border-top-color: $color02;
+			}
+		}
+
+		&:focus ~ .select-arrow {
+			transform: rotate(-180deg) translateY(-50%);
+		}
+
+		&:disabled {
+			pointer-events: none;
+			-ms-pointer-events: none;
+			opacity: .5;
+
+			~ .select-arrow {
+				border-top-color: $color05;
+			}
+		}
+	}
+
+	select::-ms-expand {
+		display: none;
+	}
+}
+
+.select-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	transform-origin: center top;
+	right: 15px;
+	width: 0;
+	height: 0;
+	transition: $transition;
+	pointer-events: none;
+	border-width: 8px 5px 0 5px;
+	border-style: solid;
+	border-color: #7b7b7b transparent transparent transparent;
+}

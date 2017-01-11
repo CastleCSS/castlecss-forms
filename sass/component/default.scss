@@ -1,0 +1,104 @@
+
+$input-height: 36px;
+$border: 1px solid $color03; 
+$transition: 0.1s ease-in-out;
+$color04: #aaa;
+$color05: #ccc;
+
+.form, .fields {
+	clear: both;
+}
+
+.fields {
+	list-style-type: none;
+	padding: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+
+	label:not(.input-control) {
+		margin-bottom: $margin-default/2;
+		display: block;
+	}
+}
+
+.form-field {
+	position: relative;
+	max-width: 100%;
+	margin-bottom: $margin-default*2;
+}
+
+
+
+input[type=email], input[type=number], input[type=password], 
+input[type=search], input[type=tel], input[type=text], 
+input[type=url] input[type=file], select, textarea {
+	transition: $transition;
+	width: 100%;
+	height: $input-height;
+	padding: 0 $padding-default;
+	background: $color01;
+	border: $border;
+	line-height: $input-height;
+
+	&:hover {
+		border-color: $color03;
+	}
+
+	&:focus {
+		border-color: $theme01;
+	}
+}
+
+textarea {
+	min-height: 14rem;
+	line-height: 1.4;
+}
+
+.combined-item {
+	display: flex;
+
+	.btn-submit {
+		border-radius: 0 4px 4px 0;
+		background: #1b94bf;
+		color: #fff;
+	}
+
+	.form-input {
+		flex: 1 0 8em;
+	}
+
+	.btn-submit {
+		flex: 0 0 auto;
+		height: $input-height;
+	}
+
+	button,
+	&[class^="fa-"]:before {
+		padding: .35em .75em;
+		border: none;
+		font-size: 1.1rem;
+		text-decoration: none;
+	}
+}
+
+.input-icon {
+	.combined-item:before {
+		flex: 0 0 2.75em;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	[class^="fa-"], [class*=" fa-"] {
+		border-radius: 2px 0 0 2px;
+		background: #ccc;
+		color: #797979;
+	}
+}
+
+.form-input {
+	background: #e9e9e9;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

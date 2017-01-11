@@ -1,0 +1,110 @@
+.input-control {
+	font-size: $font-size-default;
+	position: relative;
+	display: block;
+	padding-left: $margin-default*2.5;
+	margin-bottom: $margin-default;
+	cursor: pointer;
+	float: left;
+	clear: left;
+
+	input {
+		position: absolute;
+		z-index: -1;
+		opacity: 0; 
+	}
+
+	/* Show active control */
+	input:checked ~ .input-indicator:after {
+		display: block;
+	}
+
+	/* Checked state */
+	input:checked ~ .input-indicator {
+		background: $theme01;
+	}
+}
+
+.input-indicator {
+	position: absolute;
+	top: 2px;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	background: $color03;
+
+	&:after {
+		position: absolute;
+		display: none;
+		content: '';
+	}
+}
+
+/* Hover and focus states */
+.input-control:hover input ~ .input-indicator,
+.input-control input:focus ~ .input-indicator {
+	background: #ccc;
+}
+
+/* Hover state whilst checked */
+.input-control:hover input:not([disabled]):checked ~ .input-indicator,
+.input-control input:checked:focus ~ .input-indicator {
+	background: #12637f;
+}
+
+/* Disabled state */
+.input-control input:disabled ~ .input-indicator {
+	pointer-events: none;
+	opacity: .6;
+	background: $color03;
+}
+
+/* Checkbox tick */
+.input-checkbox {
+
+	.input-indicator:after {
+		top: 2px;
+		left: 6px;
+		width: 5px;
+    	height: 10px;
+		transform: rotate(45deg);
+		border: solid $color01;
+		border-width: 0 3px 3px 0;
+	}
+	
+	/* Disabled tick colour */
+	input:disabled ~ .input-indicator:after {
+		border: none;
+	}
+}
+
+/* Radio button inner circle */
+.input-radio {
+
+	.input-indicator {
+		border-radius: 50%;
+
+		&:after {
+			top: 7px;
+			left: 7px;
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background: $color01;
+		}
+	}
+
+	input:disabled ~ .input-indicator:after {
+		background: $color03;
+	}
+}
+
+.form-inline {
+	@extend .cf;
+
+	> * {
+		float: left;
+		clear: none;
+		margin-right: $margin-default;
+	}
+}
