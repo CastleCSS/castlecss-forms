@@ -23,20 +23,15 @@
 	input:checked ~ .input-indicator {
 		background: $theme01;
 	}
-}
 
-.input-indicator {
-	position: absolute;
-	top: 2px;
-	left: 0;
-	width: 20px;
-	height: 20px;
-	background: $color03;
+	&.disabled {
+		color: $color03;
+	}
 
-	&:after {
-		position: absolute;
-		display: none;
-		content: '';
+	input:disabled ~ .input-indicator {
+		pointer-events: none;
+		opacity: .6;
+		background: $color03;
 	}
 }
 
@@ -52,17 +47,19 @@
 	background: $theme01;
 }
 
-/* Disabled state */
-.input-control {
+/* Radio or checkbox, general styling */
+.input-indicator {
+	position: absolute;
+	top: 2px;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	background: $color03;
 
-	&.disabled {
-		color: $color03;
-	}
-	
-	input:disabled ~ .input-indicator {
-		pointer-events: none;
-		opacity: .6;
-		background: $color03;
+	&:after {
+		position: absolute;
+		display: none;
+		content: '';
 	}
 }
 
@@ -106,10 +103,37 @@
 	}
 }
 
-.form-inline {
+/* Text input combined with a submit button */
+.input-combined {
+	display: flex;
+
+	.form-input {
+		flex: 1 0 8em;
+	}
+
+	.btn-submit {
+		flex: 0 0 auto;
+		height: $input-height;
+		border-radius: 0 4px 4px 0;
+		background: $theme01;
+		color: $color01;
+	}
+
+	button,
+	&[class^="fa-"]:before {
+		padding: .35em .75em;
+		border: none;
+		font-size: 1.1rem;
+		text-decoration: none;
+	}
+}
+
+/* Horizontal forms */
+.form-horizontal {
 	@extend .cf;
 
-	> * {
+	.input-control,
+	.label {
 		float: left;
 		clear: none;
 		margin-right: $margin-default;

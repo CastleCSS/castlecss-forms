@@ -34,7 +34,8 @@ input[type=tel],
 input[type=text],
 input[type=url],
 input[type=file],
-select, textarea {
+select,
+textarea {
 	width: 100%;
 	height: $input-height;
 	padding: 0 $padding-default;
@@ -52,38 +53,25 @@ select, textarea {
 	}
 }
 
+// Not sure
+// .fields {
+//
+// 	> *:last-child {
+//
+// 		> * {
+// 			margin-bottom: 0;
+// 		}
+// 	}
+// }
+
 textarea {
 	min-height: 14rem;
 	line-height: 1.4;
 }
 
-.combined-item {
-	display: flex;
-
-	.form-input {
-		flex: 1 0 8em;
-	}
-
-	.btn-submit {
-		flex: 0 0 auto;
-		height: $input-height;
-		border-radius: 0 4px 4px 0;
-		background: $theme01;
-		color: $color01;
-	}
-
-	button,
-	&[class^="fa-"]:before {
-		padding: .35em .75em;
-		border: none;
-		font-size: 1.1rem;
-		text-decoration: none;
-	}
-}
-
 .input-icon {
 
-	.combined-item:before {
+	.input-combined:before {
 		flex: 0 0 2.75em;
 		display: inline-flex;
 		align-items: center;
