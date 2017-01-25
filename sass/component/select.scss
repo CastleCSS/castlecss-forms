@@ -6,6 +6,7 @@
 	select {
 		cursor: pointer;
 		background: $color01;
+		-webkit-appearance: none;
 		appearance: none;
 
 		&:hover,

@@ -79,9 +79,12 @@ textarea {
 	}
 
 	[class^="fa-"], [class*=" fa-"] {
-		border-radius: 2px 0 0 2px;
-		background: $color04;
 		color: $color06;
+		
+		&:before {
+			border-radius: 2px 0 0 2px;
+			background: $color04;
+		}
 	}
 }
 
