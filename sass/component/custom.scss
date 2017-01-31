@@ -107,10 +107,6 @@
 .input-combined {
 	display: flex;
 
-	.form-input {
-		flex: 1 0 8em;
-	}
-
 	.btn-submit {
 		flex: 0 0 auto;
 		height: $input-height;
@@ -125,6 +121,36 @@
 		border: none;
 		font-size: 1.1rem;
 		text-decoration: none;
+	}
+
+	[class^="fa-"], [class*=" fa-"] {
+		color: $color06;
+
+		&:before {
+			border-radius: 2px 0 0 2px;
+			background: $color04;
+		}
+	}
+
+	.form-input {
+		flex: 1 0 8em;
+	}
+
+	.input-icon {
+		display: flex;
+		flex-grow: 1;
+		background: $color03;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+
+
+		&:before {
+			flex: 0 0 2.75em;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+		}
 	}
 }
 

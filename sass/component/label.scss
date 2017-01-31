@@ -1,5 +1,5 @@
-[class^="formlabel-"],
-[class*=" formlabel-"] {
+[class^="label-"],
+[class*=" label-"] {
 
 	.form-field {
 
@@ -32,7 +32,7 @@
 	}
 }
 
-.formlabel-bottom {
+.label-bottom {
 	input,
 	textarea {
 		vertical-align: top;
@@ -59,26 +59,52 @@
 	.form-field {
 		line-height: 1;
 
-		&.has-focus label[for],
-		&.has-value label[for] {
-			transform: translateY(0);
-			color: $color04;
-			font-size: 65%;
-			line-height: 22px;
-			top: 100%;
-			margin-top: -$margin-default*1.5;
+		&.has-focus,
+		&.has-value {
+
+			label[for] {
+				transform: translateY(0);
+				color: $color04;
+				font-size: 65%;
+				line-height: 22px;
+				top: 100%;
+				margin-top: -$margin-default*1.5;
+			}
+		}
+	}
+
+	.input-combined {
+
+		~ label[for] {
+			margin-left: $margin-default*3;
+		}
+
+		.has-focus,
+		.has-value,
+		&.has-focus,
+		&.has-value {
+
+			label[for] {
+				margin-left: $margin-default*3;
+			}
+
+			input {
+				padding: 6px 6px 24px 8px;
+			}
 		}
 	}
 }
 
 .label-left {
-	
+
 	.input-indicator {
 		left: inherit;
 		right: 0;
 	}
 
 	.input-control {
+		@extend .cf;
+		float: left;
 		padding-left: 0;
 		padding-right: $padding-default*2.5;
 	}

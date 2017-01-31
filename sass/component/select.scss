@@ -4,23 +4,26 @@
 	width: 100%;
 
 	select {
-		cursor: pointer;
 		background: $color01;
 		-webkit-appearance: none;
 		appearance: none;
+		cursor: pointer;
 
 		&:hover,
 		&:focus {
+			border-color: $color05;
 			color: $color02;
-			border-color: #999;
 
 			~ .select-arrow {
 				border-top-color: $color02;
 			}
 		}
 
-		&:focus ~ .select-arrow {
-			transform: rotate(-180deg) translateY(-50%);
+		&:focus {
+
+			~ .select-arrow {
+				transform: rotate(-180deg) translateY(-50%);
+			}
 		}
 
 		&:disabled {
@@ -42,14 +45,14 @@
 .select-arrow {
 	position: absolute;
 	top: 50%;
-	transform: translateY(-50%);
-	transform-origin: center top;
 	right: 15px;
 	width: 0;
 	height: 0;
-	transition: $transition;
-	pointer-events: none;
 	border-width: 8px 5px 0 5px;
 	border-style: solid;
-	border-color: #7b7b7b transparent transparent transparent;
+	border-color: $color05 transparent transparent transparent;
+	transform: translateY(-50%);
+	transform-origin: center top;
+	pointer-events: none;
+	transition: $transition;
 }
