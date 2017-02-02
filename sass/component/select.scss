@@ -7,7 +7,8 @@
 		background: $color01;
 		-webkit-appearance: none;
 		appearance: none;
-		cursor: pointer;
+		cursor: pointer; 
+		width: 100%;
 
 		&:hover,
 		&:focus {
@@ -54,5 +55,5 @@
 	transform: translateY(-50%);
 	transform-origin: center top;
 	pointer-events: none;
-	transition: $transition;
+	transition: $input-transition;
 }

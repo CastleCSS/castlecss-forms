@@ -2,20 +2,12 @@
  	Specific form variables
 */
 
-$input-height: 36px;
-$border: 1px solid $color03;
-$transition: 0.1s ease-in-out;
-$color04: #aaa;
-$color05: #ccc;
-$color06: #797979;
-
 .form,
-.fields {
-	clear: both;
+.form-fields {
+	@extend .cf;
 }
 
-.fields {
-	@extend .cf;
+.form-fields {
 	list-style-type: none;
 	padding: 0;
 
@@ -44,9 +36,9 @@ textarea {
 	height: $input-height;
 	padding: 0 $padding-default;
 	background: $color01;
-	border: $border;
-	line-height: $input-height;
-	transition: $transition;
+	border: $input-border;
+	line-height: 1;
+	transition: $input-transition;
 
 	&:hover {
 		border-color: $color03;
@@ -54,6 +46,10 @@ textarea {
 
 	&:focus {
 		border-color: $theme01;
+	}
+
+	&::-ms-clear {
+    	display: none;
 	}
 }
 
@@ -63,7 +59,7 @@ textarea {
 input[type=file] {
 	width: 100%;
 	height: $input-height;
-	transition: $transition;
+	transition: $input-transition;
 
 	&::-ms-value {
 		background: $color01;

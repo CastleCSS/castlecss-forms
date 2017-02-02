@@ -107,6 +107,10 @@
 .input-combined {
 	display: flex;
 
+	> * {
+		display: inline-block;
+	}
+
 	.btn-submit {
 		flex: 0 0 auto;
 		height: $input-height;
@@ -144,6 +148,9 @@
 		text-overflow: ellipsis;
 		white-space: nowrap;
 
+		> * {
+			display: inline-block;
+		}
 
 		&:before {
 			flex: 0 0 2.75em;

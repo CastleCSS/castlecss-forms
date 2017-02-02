@@ -3,18 +3,6 @@
 
 	.form-field {
 
-		label[for] {
-			transition: $transition;
-			position: absolute;
-			color: $color02;
-			left: $margin-default;
-			top: $margin-default/2;
-			font-weight: normal;
-			line-height: $margin-default*2;
-			margin: 0;
-			z-index: 2;
-		}
-
 		&.has-focus label[for],
 		&.has-value label[for] {
 			transform: translateY(-100%);
@@ -23,6 +11,23 @@
 			font-size: 70%;
 			line-height: 15px;
 		}
+	} 
+
+	label[for] {
+		transition: $input-transition;
+		position: absolute;
+		color: $color02;
+		left: $margin-default;
+		top: 50%;
+		transform: translateY(-50%);
+		font-weight: normal;
+		margin: 0;
+		z-index: 2;
+	}
+
+	.input-textarea label[for] {
+		top: $margin-default/2;
+		transform: translateY(0);
 	}
 
 	.input-icon {
@@ -32,7 +37,7 @@
 	}
 }
 
-.label-bottom {
+.label-bottom, .label-top {
 	input,
 	textarea {
 		vertical-align: top;
@@ -63,12 +68,10 @@
 		&.has-value {
 
 			label[for] {
-				transform: translateY(0);
 				color: $color04;
 				font-size: 65%;
 				line-height: 22px;
 				top: 100%;
-				margin-top: -$margin-default*1.5;
 			}
 		}
 	}
@@ -89,8 +92,30 @@
 			}
 
 			input {
-				padding: 6px 6px 24px 8px;
+				padding: 0 $padding-default/2 12px $padding-default;
 			}
+		}
+	}
+}
+
+.label-top {
+	.form-field {
+
+		&.has-focus,
+		&.has-value {
+
+			label[for] {
+				top: 0;
+				transform: translateY(0);
+			}
+		}
+	}
+
+	.has-focus,
+	.has-value {
+		input,
+		textarea {
+			padding: 12px $padding-default/2 0 $padding-default;
 		}
 	}
 }

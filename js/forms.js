@@ -39,4 +39,12 @@ $(function(){
 	if(!$('.select').length) {
 		$('select').wrap('.select');
 	}
+
+	// http://www.zyxware.com/articles/3980/solved-file-input-browse-button-requiring-double-click-in-ie10
+	// Handle custom triggering of clicks for browse button in IE10
+	if (navigator.userAgent.indexOf("MSIE") > 0) {
+		$("input[type='file']").mousedown(function() {
+			$(this).trigger('click');
+		})
+	}
 });
