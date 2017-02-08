@@ -1,4 +1,11 @@
-$(function(){
+/**
+TODO: Add some licensing / documentation
+**/
+'use strict';
+
+var $ = require('jquery');
+
+var Forms = function() {
 	$('.form-simple').children('li').each(function(){
 		var $this = $(this);
 
@@ -47,4 +54,6 @@ $(function(){
 			$(this).trigger('click');
 		})
 	}
-});
+};
+
+module.exports = Forms;
