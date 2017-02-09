@@ -1,5 +1,8 @@
 'use strict';
 
 module.exports = {
-	Forms: require('./js/Forms')
+	FileInput: require('./js/FileInput'),
+	Forms: require('./js/Forms'),
+	Select: require('./js/Select'),
+	State: require('./js/State')
 };
