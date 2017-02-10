@@ -1,16 +1,19 @@
 var path = require('path');
 var webpack = require('webpack');
 
-var enties = {
+var entries = {
 	'State': "./js/State.js",
 	'FileInput' : "./js/FileInput",
 	'Select': "./js/Select",
 	'Forms': "./js/Forms"
 };
 
+var entiesVendorDistribution = entries;
+entiesVendorDistribution.Vendor = ['jQuery'];
+
 module.exports = [
 	{
-	    entry: enties,
+	    entry: entiesVendorDistribution,
 	    module: {
 	    	rules: [
 		    	{
@@ -23,14 +26,16 @@ module.exports = [
 	    },
 	    output: {
 	        path: path.join(__dirname, '/dist'),
-	        filename: "[name].min.js"
+	        filename: "[name].min.js",
+	        library: 'CastleCSS_Forms_[name]'
 	    },
 	    plugins: [
-	    	new webpack.optimize.UglifyJsPlugin()
+	    	new webpack.optimize.UglifyJsPlugin(),
+			new webpack.optimize.CommonsChunkPlugin({name:"Vendor", filename:"Vendors.bundle.js"})
 	    ]
 	},
 	{
-	    entry: enties,
+	    entry: entries,
 	    module: {
 	    	rules: [
 		    	{
@@ -43,7 +48,8 @@ module.exports = [
 	    },
 	    output: {
 	        path: path.join(__dirname, '/dist'),
-	        filename: "[name].no.vendors.min.js"
+	        filename: "[name].external.vendors.min.js",
+	      	library: 'CastleCSS_Forms_[name]'
 	    },
 	    plugins: [
 	    	new webpack.optimize.UglifyJsPlugin()
