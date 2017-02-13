@@ -14,7 +14,7 @@ function setValue($field) {
 	else if( $field.val().length === 0 )
 		$field.closest('[data-castlecss-field]').removeClass('has-value');
 		// Check if select has an option selected with a value
-	else if( field[0].tagName.match('select') && $field.find('option:selected').val() )
+	else if($field[0].tagName.match('select') && $field.find('option:selected').val() )
 		$field.closest('[data-castlecss-field]').addClass('has-value');
 	else
 		$field.closest('[data-castlecss-field]').removeClass('has-value');
@@ -31,7 +31,7 @@ var State = function(selector) {
 		$(this).closest(_selector).addClass('has-focus');
 	}).on('focusout', 'input, textarea, select', function(){
 		$(this).closest(_selector).removeClass('has-focus');
-	}).on('keyup change', function(){
+		}).on('keyup change', 'input, textarea, select', function(){
 		setValue($(this));
 	});
 };
