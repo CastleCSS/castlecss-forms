@@ -1,3 +1,5 @@
+// Customselect styling
+
 .select {
 	position: relative;
 	display: inline-block;
@@ -12,7 +14,7 @@
 
 		&:hover,
 		&:focus {
-			border-color: $color05;
+			border-color: $input-border-color;
 			color: $color02;
 
 			~ .select-arrow {
@@ -33,7 +35,7 @@
 			opacity: .5;
 
 			~ .select-arrow {
-				border-top-color: $color05;
+				border-top-color: $input-border-color;
 			}
 		}
 	}
@@ -51,7 +53,7 @@
 	height: 0;
 	border-width: 8px 5px 0 5px;
 	border-style: solid;
-	border-color: $color05 transparent transparent transparent;
+	border-color: $input-border-color transparent transparent transparent;
 	transform: translateY(-50%);
 	transform-origin: center top;
 	pointer-events: none;

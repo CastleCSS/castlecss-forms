@@ -1,6 +1,4 @@
-/*
- 	Specific form variables
-*/
+// Default form styling
 
 .form,
 .form-fields {
@@ -66,9 +64,14 @@ input[type=file] {
 		border: 1px solid $color03;
 	}
 
-	&::-ms-browse {
+
+	/*  TODO: When enabling this it breaks normal buttons in Chrome and Firefox 
+		Need a safe fix
+	*/
+	/*&::-ms-browse {
 		@extend .btn;
 	}
+	*/
 }
 
 textarea {

@@ -1,3 +1,7 @@
+/* 
+*	Input control:
+*	Radios and checkboxes
+*/
 .input-control {
 	font-size: $font-size-default;
 	position: relative;
@@ -21,24 +25,24 @@
 
 	/* Checked state */
 	input:checked ~ .input-indicator {
-		background: $theme01;
+		background: $input-control-color-focus;
 	}
 
 	&.disabled {
-		color: $color03;
+		color: $disabled;
 	}
 
 	input:disabled ~ .input-indicator {
 		pointer-events: none;
 		opacity: .6;
-		background: $color03;
+		background: $disabled;
 	}
 }
 
 /* Hover and focus states */
 .input-control:hover input ~ .input-indicator,
 .input-control input:focus ~ .input-indicator {
-	background: $color04;
+	background: $input-control-color-focus;
 }
 
 /* Hover state whilst checked */
@@ -54,7 +58,7 @@
 	left: 0;
 	width: 20px;
 	height: 20px;
-	background: $color03;
+	background: $input-border-color;
 
 	&:after {
 		position: absolute;
@@ -99,7 +103,7 @@
 	}
 
 	input:disabled ~ .input-indicator:after {
-		background: $color03;
+		background: $disabled;
 	}
 }
 
@@ -113,26 +117,24 @@
 
 	.btn-submit {
 		flex: 0 0 auto;
+		@extend .btn;
 		height: $input-height;
 		border-radius: 0 4px 4px 0;
-		background: $theme01;
-		color: $color01;
 	}
 
 	button,
 	&[class^="fa-"]:before {
 		padding: .35em .75em;
 		border: none;
-		font-size: 1.1rem;
 		text-decoration: none;
 	}
 
 	[class^="fa-"], [class*=" fa-"] {
-		color: $color06;
+		color: $input-icon-color;
 
 		&:before {
 			border-radius: 2px 0 0 2px;
-			background: $color04;
+			background: $input-icon-bg-color;
 		}
 	}
 
@@ -143,7 +145,7 @@
 	.input-icon {
 		display: flex;
 		flex-grow: 1;
-		background: $color03;
+		background: $input-icon-color;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;

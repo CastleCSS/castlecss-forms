@@ -1,6 +1,12 @@
-/**
-TODO: Add some licensing / documentation
-**/
+/*
+	* Copyright (c) 2017 - present, De Nieuwe Zaak
+	* All rights reserved.
+	*
+	* This source code is licensed under the MIT license found in the
+	* LICENSE file in the root directory of this source tree.
+	*
+*/
+
 'use strict';
 
 var $ = require('jquery');
@@ -31,7 +37,8 @@ var State = function(selector) {
 		$(this).closest(_selector).addClass('has-focus');
 	}).on('focusout', 'input, textarea, select', function(){
 		$(this).closest(_selector).removeClass('has-focus');
-		}).on('keyup change', 'input, textarea, select', function(){
+	}).on('keyup change', 'input, textarea, select', function(){
+		console.log('event');
 		setValue($(this));
 	});
 };

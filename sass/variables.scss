@@ -1,0 +1,31 @@
+/*
+	Castlecss-form variables
+	Fallback for missing castlecss-core variables
+	Example variables file: http://castlecss.com/variables.html
+*/
+
+/* Form specific variables */
+$font-size-default: 1.6rem !default;
+
+$margin-default: 12px !default;
+$padding-default: 12px !default;
+
+$theme01: #1B94BF !default;
+
+$input-height: 4.8rem !default;
+
+$input-label-color: #aaa !default;
+$input-label-color-focus: #aaa !default;
+
+$input-border-color: #eee !default;
+$input-border-color-focus: #eee !default;
+
+$input-control-color: #eee !default;
+$input-control-color-focus: $theme01 !default;
+
+$input-border: 1px solid $input-border-color !default;
+
+$input-transition: 0.1s ease-in-out !default;
+
+$input-icon-color: #eee !default;
+$input-icon-bg-color: #797979 !default;

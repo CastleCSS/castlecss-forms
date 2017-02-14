@@ -1,3 +1,5 @@
+// Styling for different types and states of labels
+
 [class^="label-"],
 [class*=" label-"] {
 
@@ -7,7 +9,7 @@
 		&.has-value label[for] {
 			transform: translateY(-100%);
 			top: 0;
-			color: $color04;
+			color: $input-label-color-focus;
 			font-size: 70%;
 			line-height: 15px;
 		}
@@ -68,7 +70,7 @@
 		&.has-value {
 
 			label[for] {
-				color: $color04;
+				color: $input-label-color-focus;
 				font-size: 65%;
 				line-height: 22px;
 				top: 100%;
