@@ -1,6 +1,6 @@
 {
   "name": "castlecss-forms",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Easy to use forms for CastleCSS",
   "main": "index.js",
   "scripts": {
@@ -24,12 +24,13 @@
     "url": "https://github.com/CastleCSS/castlecss-forms/issues"
   },
   "homepage": "https://github.com/CastleCSS/castlecss-forms#readme",
-   "dependencies": {
+  "dependencies": {
+    "castlecss-core": "^2.3.0",
     "jquery": "^3.1.1"
-   },
-   "devDependencies": {
-     "webpack": "^2.2.1",
-     "eslint": "^3.15.0",
-     "eslint-loader": "^1.6.1"
-   }
+  },
+  "devDependencies": {
+    "webpack": "^2.2.1",
+    "eslint": "^3.15.0",
+    "eslint-loader": "^1.6.1"
+  }
 }
