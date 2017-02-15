@@ -1,6 +1,6 @@
 {
   "name": "castlecss-forms",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Easy to use forms for CastleCSS",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,11 @@
   "keywords": [
     "CastleCSS"
   ],
-  "author": "MAarten van der Haar <darius@denieuwezaak.nl> (http://www.castlecss.com)",
+  "author": "Maarten van der Haar <maarten@denieuwezaak.nl> (http://www.castlecss.com)",
+  "contributors": [
+    "Darius Rosendahl <maarten@denieuwezaak.nl> (http://www.castlecss.com)",
+    "Amber Brookhuis <darius@denieuwezaak.nl> (http://www.castlecss.com)"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/CastleCSS/castlecss-forms/issues"
