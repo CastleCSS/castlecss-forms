@@ -6,26 +6,31 @@
 	width: 100%;
 
 	select {
-		background: $color01;
+		background: $input-bg-color;
 		-webkit-appearance: none;
 		appearance: none;
-		cursor: pointer; 
+		cursor: pointer;
 		width: 100%;
 
 		&:hover,
 		&:focus {
 			border-color: $input-border-color;
-			color: $color02;
+			color: $input-color-focus;
 
-			~ .select-arrow {
-				border-top-color: $color02;
+			~ .select-arrow:after {
+				border-top-color: $input-border-color-focus;
 			}
 		}
 
 		&:focus {
 
 			~ .select-arrow {
-				transform: rotate(-180deg) translateY(-50%);
+				// transform: translateY(-50%);
+
+				&:after {
+					transform: rotate(-90deg);
+					margin-left: -3px;
+				}
 			}
 		}
 
@@ -35,7 +40,7 @@
 			opacity: .5;
 
 			~ .select-arrow {
-				border-top-color: $input-border-color;
+				border-top-color: $disabled;
 			}
 		}
 	}
@@ -46,16 +51,20 @@
 }
 
 .select-arrow {
-	position: absolute;
-	top: 50%;
-	right: 15px;
-	width: 0;
-	height: 0;
-	border-width: 8px 5px 0 5px;
-	border-style: solid;
-	border-color: $input-border-color transparent transparent transparent;
+	position: absolute; top: 50%; right: 0;
+	width: $input-height; height: $input-height;
 	transform: translateY(-50%);
-	transform-origin: center top;
-	pointer-events: none;
 	transition: $input-transition;
+	pointer-events: none;
+	
+	&:after {
+		box-sizing: border-box;
+		text-align: center;
+		content: $select-arrow;
+		display: block;
+		width: $input-height; height: $input-height;
+		line-height: $input-height;
+		transform: rotate(90deg);
+		transform-origin: center;
+	}
 }

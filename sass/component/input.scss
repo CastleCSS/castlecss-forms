@@ -48,7 +48,7 @@
 /* Hover state whilst checked */
 .input-control:hover input:not([disabled]):checked ~ .input-indicator,
 .input-control input:checked:focus ~ .input-indicator {
-	background: $theme01;
+	background: $input-control-color-focus;
 }
 
 /* Radio or checkbox, general styling */
@@ -59,11 +59,13 @@
 	width: 20px;
 	height: 20px;
 	background: $input-border-color;
+	transition: $input-transition;
 
 	&:after {
 		position: absolute;
 		display: none;
 		content: '';
+		transition: $input-transition;		
 	}
 }
 
@@ -98,7 +100,7 @@
 			width: 6px;
 			height: 6px;
 			border-radius: 50%;
-			background: $color01;
+			background: $input-bg-color;
 		}
 	}
 

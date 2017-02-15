@@ -33,17 +33,19 @@ textarea {
 	width: 100%;
 	height: $input-height;
 	padding: 0 $padding-default;
-	background: $color01;
+	background: $input-bg-color;
 	border: $input-border;
 	line-height: 1;
 	transition: $input-transition;
+	-webkit-appearance: none;
 
 	&:hover {
-		border-color: $color03;
+		border-color: $input-border-color-focus;
 	}
 
 	&:focus {
-		border-color: $theme01;
+		border-color: $input-border-color-focus;
+		background: $input-bg-color-focus;
 	}
 
 	&::-ms-clear {
@@ -60,18 +62,17 @@ input[type=file] {
 	transition: $input-transition;
 
 	&::-ms-value {
-		background: $color01;
-		border: 1px solid $color03;
+		background: $input-bg-color;
+		border: $input-border;
 	}
-
 
 	/*  TODO: When enabling this it breaks normal buttons in Chrome and Firefox 
 		Need a safe fix
 	*/
 	/*&::-ms-browse {
 		@extend .btn;
-	}
-	*/
+	}*/
+	
 }
 
 textarea {
