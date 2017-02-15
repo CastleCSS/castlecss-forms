@@ -1,0 +1,138 @@
+// Styling for different types and states of labels
+
+[class^="label-"],
+[class*=" label-"] {
+
+	.form-field {
+
+		&.has-focus label[for],
+		&.has-value label[for] {
+			transform: translateY(-100%);
+			top: 0;
+			color: $input-label-color-focus;
+			font-size: 70%;
+			line-height: 15px;
+		}
+	} 
+
+	label[for] {
+		transition: $input-transition;
+		position: absolute;
+		color: $color02;
+		left: $margin-default;
+		top: 50%;
+		transform: translateY(-50%);
+		font-weight: normal;
+		margin: 0;
+		z-index: 2;
+	}
+
+	.input-textarea label[for] {
+		top: $margin-default/2;
+		transform: translateY(0);
+	}
+
+	.input-icon {
+		label[for] {
+			left: $margin-default*4.5;
+		}
+	}
+}
+
+.label-bottom, .label-top {
+	input,
+	textarea {
+		vertical-align: top;
+		padding: $padding-default;
+	}
+
+	textarea {
+		padding-bottom: $padding-default;
+		box-sizing: border-box;
+	}
+
+	label {
+		z-index: 2;
+	}
+
+	.has-focus,
+	.has-value {
+		input,
+		textarea {
+			padding: $padding-default/2 $padding-default/2 $padding-default*2 $padding-default;
+		}
+	}
+
+	.form-field {
+		line-height: 1;
+
+		&.has-focus,
+		&.has-value {
+
+			label[for] {
+				color: $input-label-color-focus;
+				font-size: 65%;
+				line-height: 22px;
+				top: 100%;
+			}
+		}
+	}
+
+	.input-combined {
+
+		~ label[for] {
+			margin-left: $margin-default*3;
+		}
+
+		.has-focus,
+		.has-value,
+		&.has-focus,
+		&.has-value {
+
+			label[for] {
+				margin-left: $margin-default*3;
+			}
+
+			input {
+				padding: 0 $padding-default/2 12px $padding-default;
+			}
+		}
+	}
+}
+
+.label-top {
+	.form-field {
+
+		&.has-focus,
+		&.has-value {
+
+			label[for] {
+				top: 0;
+				transform: translateY(0);
+			}
+		}
+	}
+
+	.has-focus,
+	.has-value {
+		input,
+		textarea {
+			padding: 12px $padding-default/2 0 $padding-default;
+		}
+	}
+}
+
+.label-left {
+
+	.input-indicator {
+		left: inherit;
+		right: 0;
+	}
+
+	.input-control {
+		@extend .cf;
+		float: left;
+		padding-left: 0;
+		padding-right: $padding-default*2.5;
+	}
+}

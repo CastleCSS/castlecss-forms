@@ -1,0 +1,99 @@
+// Default form styling
+
+.form,
+.form-fields {
+	@extend .cf;
+}
+
+.form-fields {
+	list-style-type: none;
+	padding: 0;
+
+	label:not(.input-control) {
+		margin-bottom: $margin-default/2;
+		display: block;
+	}
+}
+
+.form-field {
+	position: relative;
+	max-width: 100%;
+	margin-bottom: $margin-default*2;
+}
+
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=url],
+select,
+textarea {
+	width: 100%;
+	height: $input-height;
+	padding: 0 $padding-default;
+	background: $input-bg-color;
+	border: $input-border;
+	line-height: 1;
+	transition: $input-transition;
+	-webkit-appearance: none;
+
+	&:hover {
+		border-color: $input-border-color-focus;
+	}
+
+	&:focus {
+		border-color: $input-border-color-focus;
+		background: $input-bg-color-focus;
+	}
+
+	&::-ms-clear {
+    	display: none;
+	}
+}
+
+/*
+	Input type file
+*/
+input[type=file] {
+	width: 100%;
+	height: $input-height;
+	transition: $input-transition;
+
+	&::-ms-value {
+		background: $input-bg-color;
+		border: $input-border;
+	}
+
+	/*  TODO: When enabling this it breaks normal buttons in Chrome and Firefox 
+		Need a safe fix
+	*/
+	/*&::-ms-browse {
+		@extend .btn;
+	}*/
+	
+}
+
+textarea {
+	min-height: 14rem;
+	line-height: 1.4;
+}
+
+/*
+	No bottom margin to the last element of a form,
+	except when there is only one child.
+*/
+.form {
+
+	> *:last-child:not(:only-child) {
+
+		> * {
+			margin-bottom: 0;
+
+			> * {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

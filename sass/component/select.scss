@@ -1,0 +1,70 @@
+// Customselect styling
+
+.select {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+
+	select {
+		background: $input-bg-color;
+		-webkit-appearance: none;
+		appearance: none;
+		cursor: pointer;
+		width: 100%;
+
+		&:hover,
+		&:focus {
+			border-color: $input-border-color;
+			color: $input-color-focus;
+
+			~ .select-arrow:after {
+				border-top-color: $input-border-color-focus;
+			}
+		}
+
+		&:focus {
+
+			~ .select-arrow {
+				// transform: translateY(-50%);
+
+				&:after {
+					transform: rotate(-90deg);
+					margin-left: -3px;
+				}
+			}
+		}
+
+		&:disabled {
+			pointer-events: none;
+			-ms-pointer-events: none;
+			opacity: .5;
+
+			~ .select-arrow {
+				border-top-color: $disabled;
+			}
+		}
+	}
+
+	select::-ms-expand {
+		display: none;
+	}
+}
+
+.select-arrow {
+	position: absolute; top: 50%; right: 0;
+	width: $input-height; height: $input-height;
+	transform: translateY(-50%);
+	transition: $input-transition;
+	pointer-events: none;
+	
+	&:after {
+		box-sizing: border-box;
+		text-align: center;
+		content: $select-arrow;
+		display: block;
+		width: $input-height; height: $input-height;
+		line-height: $input-height;
+		transform: rotate(90deg);
+		transform-origin: center;
+	}
+}

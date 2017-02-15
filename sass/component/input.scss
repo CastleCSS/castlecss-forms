@@ -1,0 +1,178 @@
+/* 
+*	Input control:
+*	Radios and checkboxes
+*/
+.input-control {
+	font-size: $font-size-default;
+	position: relative;
+	display: block;
+	padding-left: $margin-default*2.5;
+	margin-bottom: $margin-default;
+	cursor: pointer;
+	float: left;
+	clear: left;
+
+	input {
+		position: absolute;
+		z-index: -1;
+		opacity: 0;
+	}
+
+	/* Show active control */
+	input:checked ~ .input-indicator:after {
+		display: block;
+	}
+
+	/* Checked state */
+	input:checked ~ .input-indicator {
+		background: $input-control-color-focus;
+	}
+
+	&.disabled {
+		color: $disabled;
+	}
+
+	input:disabled ~ .input-indicator {
+		pointer-events: none;
+		opacity: .6;
+		background: $disabled;
+	}
+}
+
+/* Hover and focus states */
+.input-control:hover input ~ .input-indicator,
+.input-control input:focus ~ .input-indicator {
+	background: $input-control-color-focus;
+}
+
+/* Hover state whilst checked */
+.input-control:hover input:not([disabled]):checked ~ .input-indicator,
+.input-control input:checked:focus ~ .input-indicator {
+	background: $input-control-color-focus;
+}
+
+/* Radio or checkbox, general styling */
+.input-indicator {
+	position: absolute;
+	top: 2px;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	background: $input-border-color;
+	transition: $input-transition;
+
+	&:after {
+		position: absolute;
+		display: none;
+		content: '';
+		transition: $input-transition;		
+	}
+}
+
+/* Checkbox tick */
+.input-checkbox {
+
+	.input-indicator:after {
+		top: 2px;
+		left: 6px;
+		width: 5px;
+    	height: 10px;
+		transform: rotate(45deg);
+		border: solid $color01;
+		border-width: 0 3px 3px 0;
+	}
+
+	/* Disabled tick colour */
+	input:disabled ~ .input-indicator:after {
+		border: none;
+	}
+}
+
+/* Radio button inner circle */
+.input-radio {
+
+	.input-indicator {
+		border-radius: 50%;
+
+		&:after {
+			top: 7px;
+			left: 7px;
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background: $input-bg-color;
+		}
+	}
+
+	input:disabled ~ .input-indicator:after {
+		background: $disabled;
+	}
+}
+
+/* Text input combined with a submit button */
+.input-combined {
+	display: flex;
+
+	> * {
+		display: inline-block;
+	}
+
+	.btn-submit {
+		flex: 0 0 auto;
+		@extend .btn;
+		height: $input-height;
+		border-radius: 0 4px 4px 0;
+	}
+
+	button,
+	&[class^="fa-"]:before {
+		padding: .35em .75em;
+		border: none;
+		text-decoration: none;
+	}
+
+	[class^="fa-"], [class*=" fa-"] {
+		color: $input-icon-color;
+
+		&:before {
+			border-radius: 2px 0 0 2px;
+			background: $input-icon-bg-color;
+		}
+	}
+
+	.form-input {
+		flex: 1 0 8em;
+	}
+
+	.input-icon {
+		display: flex;
+		flex-grow: 1;
+		background: $input-icon-color;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+
+		> * {
+			display: inline-block;
+		}
+
+		&:before {
+			flex: 0 0 3.6rem;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+}
+
+/* Horizontal forms */
+.form-horizontal {
+	@extend .cf;
+
+	.input-control,
+	.label {
+		float: left;
+		clear: none;
+		margin-right: $margin-default;
+	}
+}
