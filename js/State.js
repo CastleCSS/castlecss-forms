@@ -9,37 +9,64 @@
 
 'use strict';
 
-var $ = require('jquery');
+var util = require('./util');
 
-function setValue($field) {
-	// Check if inputs or textareas have a value
-	if( $field.val() == null )
+var State = {};
+
+function setState(inputElement, fieldElement) {
+	if(!inputElement.value || inputElement.value.length === 0) {
+		util.removeClass(fieldElement, 'has-value');
 		return;
-	else if( $field.val().length > 0 )
-		$field.closest('[data-castlecss-field]').addClass('has-value');
-	else if( $field.val().length === 0 )
-		$field.closest('[data-castlecss-field]').removeClass('has-value');
-		// Check if select has an option selected with a value
-	else if($field[0].tagName.match('select') && $field.find('option:selected').val() )
-		$field.closest('[data-castlecss-field]').addClass('has-value');
-	else
-		$field.closest('[data-castlecss-field]').removeClass('has-value');
+	}
+
+	if (inputElement.value.length > 0) {
+		util.addClass(fieldElement, 'has-value');
+	}
+	
+	//TODO: Additional checks.
 }
 
-var State = function(selector) {
+// Attaches events to input elements and pass along the field element for adjusting its classes.
+var attachEvents = function(inputElement, fieldElement) {
+	inputElement.addEventListener('focus', function() {
+		util.addClass(fieldElement, 'has-focus');
+	}, false);
+
+	inputElement.addEventListener('focusout', function() {
+		util.removeClass(fieldElement, 'has-focus');
+	}, false);
+
+	inputElement.addEventListener('keyup', function(e) {
+		setState(e.target, fieldElement);
+	}, false);
+
+	inputElement.addEventListener('change', function(e) {
+		setState(e.target, fieldElement);
+	}, false);
+}
+
+// Initializes this module by setting initial values and attaching events.
+State.init = function(selector) {
 	var _selector = selector || '[data-castlecss-field]';
 
-	$('input, textarea, select', _selector).each(function(){
-		setValue($(this));
-	});
+	// Once the window has loaded, we are ready to query for elements.
+	window.addEventListener('load', function() {
+		var fieldElements = document.querySelectorAll(_selector);
+	
+		// Loop through each element to set their initial values and attach events.
+		for (var i = 0; i < fieldElements.length; i++) {
+			var fieldElement = fieldElements[i];
+		
+			var inputElements = fieldElement.querySelectorAll('input, textarea, select');
 
-	$(_selector).on('focus', 'input, textarea, select', function(){
-		$(this).closest(_selector).addClass('has-focus');
-	}).on('focusout', 'input, textarea, select', function(){
-		$(this).closest(_selector).removeClass('has-focus');
-	}).on('keyup change', 'input, textarea, select', function(){
-		setValue($(this));
-	});
+			for (var j = 0; j < inputElements.length; j++) {
+				var inputElement = inputElements[j];
+
+				setState(inputElement, fieldElement);
+				attachEvents(inputElement, fieldElement);
+			}
+		}
+	}, false);
 };
 
 module.exports = State;
