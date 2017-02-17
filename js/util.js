@@ -1,6 +1,6 @@
-var util = {};
+var Util = {};
 
-util.addClass = function(element, className) {
+Util.addClass = function(element, className) {
     if (element.classList) {
         element.classList.add(className);
     }
@@ -9,7 +9,7 @@ util.addClass = function(element, className) {
     }
 };
 
-util.removeClass = function(element, className) {
+Util.removeClass = function(element, className) {
     if (element.classList) {
         element.classList.remove(className);
     }
@@ -18,4 +18,4 @@ util.removeClass = function(element, className) {
     }
 };
 
-module.exports = util;
+module.exports = Util;
