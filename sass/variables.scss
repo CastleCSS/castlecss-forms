@@ -1,8 +1,15 @@
 /*
 	Castlecss-form variables
 	Fallback for missing castlecss-core variables
+	
+	You should have your own variables file to overwrite castlecss-core
 	Example variables file: http://castlecss.com/variables.html
+	Installation instructions: http://castlecss.com/installation.html
 */
+
+$color01: #fff !default;
+$color02: #000 !default;
+$theme01: #1B94BF !default;	// Knight blue
 
 /* Form specific variables */
 
