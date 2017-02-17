@@ -13,12 +13,14 @@ var State =  require('./State');
 var FileInput = require('./FileInput');
 var Select = require('./Select');
 
-var Forms = function(selectors) {
+var Forms = {};
+
+Forms.init = function(selectors) {
 	selectors = selectors || {};
 
 	FileInput(selectors.fileInput);
 	Select(selectors.select);
-	State(selectors.state);
+	State.init();
 };
 
 module.exports = Forms;
