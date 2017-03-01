@@ -15,17 +15,7 @@
 		}
 	} 
 
-	label[for] {
-		transition: $input-transition;
-		position: absolute;
-		color: $color02;
-		left: $margin-default;
-		top: 50%;
-		transform: translateY(-50%);
-		font-weight: normal;
-		margin: 0;
-		z-index: 2;
-	}
+	
 
 	.input-textarea label[for] {
 		top: $margin-default/2;
@@ -37,6 +27,22 @@
 			left: $margin-default*4.5;
 		}
 	}
+}
+
+.form-field {
+	
+	label[for] {
+		transition: $input-transition;
+		position: absolute;
+		color: $input-label-color;
+		left: $margin-default;
+		top: 50%;
+		transform: translateY(-50%);
+		font-weight: normal;
+		margin: 0;
+		z-index: 2;
+	}
+
 }
 
 .label-bottom, .label-top {
