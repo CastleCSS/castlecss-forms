@@ -1,6 +1,6 @@
 {
   "name": "castlecss-forms",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Easy to use forms for CastleCSS",
   "main": "index.js",
   "scripts": {
