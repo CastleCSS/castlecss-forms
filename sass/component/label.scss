@@ -31,7 +31,7 @@
 
 .form-field {
 	
-	label[for] {
+	label[for]:not(.input-control) {
 		transition: $input-transition;
 		position: absolute;
 		color: $input-label-color;
