@@ -85,7 +85,10 @@ To make use of all the modules, simply include the following scripts:
 <script type="text/javascript" src="/path/to/scripts/Vendors.bundle.js"></script>
 <script type="text/javascript" src="/path/to/scripts/Forms.min.js"></script>
 <script type="text/javascript">
-	CastleCSS_Forms_Forms();
+	$(function () {
+		CastleCSS_Forms_Forms();
+	});
+	
 </script>
 ```
 
