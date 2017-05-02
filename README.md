@@ -1,5 +1,5 @@
 # CastleCSS Forms
-Quickly add breadcrumbs with this module
+Quickly add forms with this module
 
 ![CastleCSS logo @CastleCss.com](https://www.doordarius.nl/castlecss-logo-250.png)
 
@@ -21,8 +21,8 @@ You can find the documentation and examples at http://www.castlecss.com and [cas
 
 
 ## Setup
-Your project should have a setup similar to this (included in the [CastleCSS Boilerplate](https://github.com/CastleCSS/castlecss-boilerplate)):
-With this you make sure your own variables overwrite the castle-core variables and your setup is still updatable.
+Your project should have a setup similar to the example below (included in the [CastleCSS Boilerplate](https://github.com/CastleCSS/castlecss-boilerplate)).
+This way you make sure your own variables overwrite the castle-core variables and your setup is still updatable.
 
 ```
 | Your project/
@@ -40,18 +40,18 @@ With this you make sure your own variables overwrite the castle-core variables a
 ```
 
 ### Main.scss
-Your main.scss should have a setup similar to this (included in the [CastleCSS Boilerplate](https://github.com/CastleCSS/castlecss-boilerplate)):
+To enable CastleCSS Forms it is essential that you include the corresponding main.scss file in your project's main.scss. This file should have a setup similar to this: (included in the [CastleCSS Boilerplate](https://github.com/CastleCSS/castlecss-boilerplate)). 
 
 ```
 /*  core variable files */
-@import "path/to/castlecss-core/sass/variables";
+@import "node_modules/castlecss-core/sass/variables";
 
 /*  Your own variables so they overwrite the core */
 @import "variables";
 
 /*  rest of core files */
 @import "node_modules/castlecss-core/sass/main";
-@import "node_modules/castlecss-notifications/sass/main";
+@import "node_modules/castlecss-forms/sass/main";
 
  
 /*  Include your own files below this line
@@ -61,7 +61,8 @@ Your main.scss should have a setup similar to this (included in the [CastleCSS B
 
 ## Dependencies
 Because CastleCSS Forms uses jQuery as dependency, the distributions contain jQuery. There is however a possibility to make use of the jQuery version of your choice, by making use of the no.vendors distributions.
-The no.vendor distributions work, as long as the jQuery variable is defined in the global scope.
+The no.vendor distributions work, as long as the jQuery variable is defined in the global scope. 
+
 
 ## Basic structure
 The basis structure for your website should look similar to this:
@@ -94,7 +95,20 @@ The basis structure for your website should look similar to this:
 ```
 
 ## Usage
-There are a couple of different ways to make use of the CastleCSS Forms script library.
+There are a couple of different ways to make use of the CastleCSS Forms script library. CastleCSS Forms consists of multiple modules, which can be used separately if desirable.
+
+### Include all Forms modules
+To make use of all the modules, simply include the following scripts (that are located in the 'dist' folder):
+
+```
+<script type="text/javascript" src="/path/to/scripts/Vendors.bundle.js"></script>
+<script type="text/javascript" src="/path/to/scripts/Forms.min.js"></script>
+<script type="text/javascript">
+	$(function () {
+		CastleCSS_Forms_Forms();
+	});
+</script>
+```
 
 ### Include as separate modules
 To make use of the modules separately, use the following scripts (that are located in the 'dist' folder):
@@ -114,18 +128,7 @@ To make use of the modules separately, use the following scripts (that are locat
 </script>
 ```
 
-### Include
-To make use of all the modules, simply include the following scripts (that are located in the 'dist' folder):
 
-```
-<script type="text/javascript" src="/path/to/scripts/Vendors.bundle.js"></script>
-<script type="text/javascript" src="/path/to/scripts/Forms.min.js"></script>
-<script type="text/javascript">
-	$(function () {
-		CastleCSS_Forms_Forms();
-	});
-</script>
-```
 
 ### Require
 It is possible to require CastleCSS Forms into your project.
