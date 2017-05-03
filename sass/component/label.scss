@@ -5,8 +5,8 @@
 
 	.form-field {
 
-		&.has-focus label[for],
-		&.has-value label[for] {
+		&.has-focus label.placeholder,
+		&.has-value label.placeholder {
 			transform: translateY(-100%);
 			top: 0;
 			color: $input-label-color-focus;
@@ -17,10 +17,7 @@
 
 	
 
-	.input-textarea label[for] {
-		top: $margin-default/2;
-		transform: translateY(0);
-	}
+
 
 	.input-icon {
 		label[for] {
@@ -30,8 +27,8 @@
 }
 
 .form-field {
-	
-	label[for]:not(.input-control) {
+
+	label.placeholder {
 		transition: $input-transition;
 		position: absolute;
 		color: $input-label-color;
@@ -44,7 +41,7 @@
 	}
 
 	&.has-focus, &.has-value {
-		label {
+		label.placeholder {
 			display: none;
 
 			[class*="label-"] &
@@ -57,7 +54,7 @@
 }
 
 .label-bottom, .label-top {
-	input,
+	input:not([type=file]),
 	textarea {
 		vertical-align: top;
 		padding: $padding-default;
@@ -74,7 +71,7 @@
 
 	.has-focus,
 	.has-value {
-		input,
+		input:not([type=file]),
 		textarea {
 			padding: $padding-default/2 $padding-default/2 $padding-default*2 $padding-default;
 		}
@@ -86,7 +83,7 @@
 		&.has-focus,
 		&.has-value {
 
-			label[for] {
+			label.placeholder {
 				color: $input-label-color-focus;
 				font-size: 65%;
 				line-height: 22px;
@@ -123,7 +120,7 @@
 		&.has-focus,
 		&.has-value {
 
-			label[for] {
+			label.placeholder {
 				top: 0;
 				transform: translateY(0);
 			}
@@ -132,7 +129,7 @@
 
 	.has-focus,
 	.has-value {
-		input,
+		input:not([type=file]),
 		textarea {
 			padding: 12px $padding-default/2 0 $padding-default;
 		}
