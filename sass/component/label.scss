@@ -2,23 +2,6 @@
 
 [class^="label-"],
 [class*=" label-"] {
-
-	.form-field {
-
-		&.has-focus label.placeholder,
-		&.has-value label.placeholder {
-			transform: translateY(-100%);
-			top: 0;
-			color: $input-label-color-focus;
-			font-size: 70%;
-			line-height: 15px;
-		}
-	} 
-
-	
-
-
-
 	.input-icon {
 		label[for] {
 			left: $margin-default*4.5;
@@ -27,8 +10,7 @@
 }
 
 .form-field {
-
-	label.placeholder {
+	.placeholder {
 		transition: $input-transition;
 		position: absolute;
 		color: $input-label-color;
@@ -41,7 +23,7 @@
 	}
 
 	&.has-focus, &.has-value {
-		label.placeholder {
+		.placeholder {
 			display: none;
 
 			[class*="label-"] &
@@ -50,7 +32,6 @@
 			}
 		}
 	}
-
 }
 
 .label-bottom, .label-top {
@@ -83,7 +64,7 @@
 		&.has-focus,
 		&.has-value {
 
-			label.placeholder {
+			.placeholder {
 				color: $input-label-color-focus;
 				font-size: 65%;
 				line-height: 22px;
@@ -93,7 +74,6 @@
 	}
 
 	.input-combined {
-
 		~ label[for] {
 			margin-left: $margin-default*3;
 		}
@@ -116,14 +96,14 @@
 
 .label-top {
 	.form-field {
-
 		&.has-focus,
 		&.has-value {
-
-			label.placeholder {
+			
+			.placeholder {
 				top: 0;
 				transform: translateY(0);
 			}
+
 		}
 	}
 
@@ -136,8 +116,22 @@
 	}
 }
 
-.label-left {
+.label-above {
+	.form-field {
 
+		&.has-focus .placeholder,
+		&.has-value .placeholder {
+			transform: translateY(-100%);
+			top: 0;
+			color: $input-label-color-focus;
+			font-size: 70%;
+			line-height: 15px;
+		}
+
+	} 
+}
+
+.label-left {
 	.input-indicator {
 		left: inherit;
 		right: 0;
