@@ -7,6 +7,19 @@
 			left: $margin-default*4.5;
 		}
 	}
+
+	.form-field {
+
+		&.has-focus .placeholder,
+		&.has-value .placeholder {
+			transform: translateY(-100%);
+			top: 0;
+			color: $input-label-color-focus;
+			font-size: 70%;
+			line-height: 15px;
+		}
+
+	} 
 }
 
 .form-field {
@@ -35,7 +48,7 @@
 }
 
 .label-bottom, .label-top {
-	input:not([type=file]),
+	input,
 	textarea {
 		vertical-align: top;
 		padding: $padding-default;
@@ -52,7 +65,7 @@
 
 	.has-focus,
 	.has-value {
-		input:not([type=file]),
+		input,
 		textarea {
 			padding: $padding-default/2 $padding-default/2 $padding-default*2 $padding-default;
 		}
@@ -109,26 +122,11 @@
 
 	.has-focus,
 	.has-value {
-		input:not([type=file]),
+		input,
 		textarea {
 			padding: 12px $padding-default/2 0 $padding-default;
 		}
 	}
-}
-
-.label-above {
-	.form-field {
-
-		&.has-focus .placeholder,
-		&.has-value .placeholder {
-			transform: translateY(-100%);
-			top: 0;
-			color: $input-label-color-focus;
-			font-size: 70%;
-			line-height: 15px;
-		}
-
-	} 
 }
 
 .label-left {
