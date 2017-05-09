@@ -162,3 +162,11 @@ CastleCSS_Forms_Forms({
 CastleCSS_Forms_Select('.yourOwnSelector');
 CastleCSS_Forms_FileInput('.yourOwnSelector');
 ```
+
+## Roadmap
+We're currently working hard on making the CastleCSS expansions and improvements. CastleCSS is made to serve as lightweight basis for tailor made software but we do want to give you the option to install a few modules to make your life easier.
+
+Please see the [ROADMAP.MD from the CastleCSS Meta Package](https://github.com/CastleCSS/castlecss/blob/master/ROADMAP.md) for our current plans for the future.
+
+## Contributing
+Want to contribute? We'd love your help, please take a look at the roadmap or submit new suggestions.
