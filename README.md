@@ -149,7 +149,7 @@ By default, the CastleCSS Forms library searches for the following elements:
 </select>
 ```
 
-### Configuration
+#### Configuration
 By default, the CastleCSS Forms library uses the CastleCSS selectors.
 It is possible to configure selectors of your own choice. Just add the following configuration:
 
