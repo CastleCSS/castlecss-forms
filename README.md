@@ -7,6 +7,7 @@ Quickly add forms with this CastleCSS module.
 The form files are part of the [CastleCSS Package](https://github.com/CastleCSS/castlecss).
 
 ## How to install
+- Download the [CastleCSS Boilerplate](https://www.github.com/CastleCSS/castlecss-boilerplate). All Packages are included + examples and project setup
 - Install via [npm](https://www.npmjs.com/): ```npm install castlecss-forms -S``` (see [below](#getting-started) for a step-by-step guide)
 - Require it in your own npm package
 - Download or clone the package
@@ -86,7 +87,7 @@ _Please not that **[jQuery](https://jquery.com/download/) is required** in order
 
 We propose three ways to make use of the CastleCSS Forms script library, which will be listed below. CastleCSS Forms consists of multiple modules, which can be used separately if desired. 
 
-##### Include all Forms modules
+#### Include all Forms modules
 To make use of all the modules, simply include the following scripts (that are located in the 'dist' folder):
 
 ```
