@@ -28,6 +28,7 @@ input[type=search],
 input[type=tel],
 input[type=text],
 input[type=url],
+input[type=date],
 select,
 textarea {
 	width: 100%;
@@ -73,6 +74,15 @@ input[type=file] {
 		@extend .btn;
 	}*/
 	
+}
+
+// -webkit fix for the label placeholder in input[type=date]
+input[type=date]::-webkit-datetime-edit {
+	opacity: 0;
+
+	.has-focus &, .has-value & {
+		opacity: 1;
+	}
 }
 
 textarea {
