@@ -39,11 +39,14 @@
 		.placeholder {
 			display: none;
 
-			[class*="label-"] &
- 			{
+			[class*="label-"] & {
 				display: block;
 			}
 		}
+	}
+
+	label:first-child {
+		float: left;
 	}
 }
 
