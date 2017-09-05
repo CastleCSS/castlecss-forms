@@ -51,6 +51,13 @@
 	background: $input-control-color-focus;
 }
 
+/* Hover states whilst disabled */
+.input-control:hover input[disabled]:checked ~ .input-indicator,
+.input-control:hover input[disabled] ~ .input-indicator
+ {
+	background: $disabled;
+}
+
 /* Radio or checkbox, general styling */
 .input-indicator {
 	position: absolute;
@@ -84,7 +91,7 @@
 
 	/* Disabled tick colour */
 	input:disabled ~ .input-indicator:after {
-		border: none;
+		border-color: darken($disabled, 20%);
 	}
 }
 
@@ -105,13 +112,14 @@
 	}
 
 	input:disabled ~ .input-indicator:after {
-		background: $disabled;
+		background: darken($disabled, 20%);
 	}
 }
 
 /* Text input combined with a submit button */
 .input-combined {
 	display: flex;
+	width: 100%;
 
 	> * {
 		display: inline-block;
