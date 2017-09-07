@@ -1,6 +1,6 @@
 {
   "name": "castlecss-forms",
-  "version": "1.8.0",
+  "version": "1.0.8",
   "description": "Easy to use forms for CastleCSS",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,8 @@
     "url": "git+https://github.com/CastleCSS/castlecss-forms.git"
   },
   "keywords": [
-    "CastleCSS"
+    "CastleCSS",
+    "forms"
   ],
   "author": "Maarten van der Haar <maarten@denieuwezaak.nl> (http://www.castlecss.com)",
   "contributors": [
