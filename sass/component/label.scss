@@ -1,10 +1,16 @@
 // Removing standard placeholder when using castlecss-forms
-:-ms-input-placeholder,
-::-webkit-input-placeholder,
+/*! autoprefixer: off */
+::-webkit-input-placeholder {
+	opacity: 0;
+}
 :-moz-placeholder,
 ::-moz-placeholder {
-	display: none;
+	opacity: 0;
 }
+:-ms-input-placeholder{
+	color: transparent;
+}
+/*! autoprefixer: on */
 
 // Styling for different types and states of labels
 [class^="label-"],
@@ -47,7 +53,7 @@
 	&.has-value {
 
 		label[for] {
-			// opacity: 0;
+			opacity: 0;
 
 			[class*="label-"] &
  			{
@@ -90,6 +96,7 @@
 			opacity: 1;
 			transition: $input-transition;
 		}
+
 	}
 
 	.form-field {
