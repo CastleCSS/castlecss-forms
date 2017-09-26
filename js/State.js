@@ -37,7 +37,7 @@ var State = function(selector) {
 		$(this).closest(_selector).addClass('has-focus');
 	}).on('focusout', 'input, textarea, select', function(){
 		$(this).closest(_selector).removeClass('has-focus');
-	}).on('keyup change', 'input, textarea, select', function(){
+		}).on('input keypress', 'input, textarea, select', function(){
 		setValue($(this));
 	});
 };
