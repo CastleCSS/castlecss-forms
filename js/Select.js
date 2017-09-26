@@ -16,9 +16,7 @@ function wrapSelects(selector) {
 		var $this = $(this);
 		if ($this.parent('.select').length == 0) {
 			$this.wrap('<div class="select">');
-			if ($this.parent('.select').length > 0) {
-				$this.parent('.select').append('<div class="select-arrow">');
-			}
+			$this.parent('.select').append('<div class="select-arrow">');
 		}
 	});
 }
