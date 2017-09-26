@@ -1,4 +1,4 @@
-/* 
+/*
 *	Input control:
 *	Radios and checkboxes
 */
@@ -51,10 +51,17 @@
 	background: $input-control-color-focus;
 }
 
+/* Hover states whilst disabled */
+.input-control:hover input[disabled]:checked ~ .input-indicator,
+.input-control:hover input[disabled] ~ .input-indicator
+ {
+	background: $disabled;
+}
+
 /* Radio or checkbox, general styling */
 .input-indicator {
 	position: absolute;
-	top: 2px;
+	top: -2px;
 	left: 0;
 	width: 20px;
 	height: 20px;
@@ -65,7 +72,7 @@
 		position: absolute;
 		display: none;
 		content: '';
-		transition: $input-transition;		
+		transition: $input-transition;
 	}
 }
 
@@ -84,7 +91,7 @@
 
 	/* Disabled tick colour */
 	input:disabled ~ .input-indicator:after {
-		border: none;
+		border-color: darken($disabled, 20%);
 	}
 }
 
@@ -105,7 +112,7 @@
 	}
 
 	input:disabled ~ .input-indicator:after {
-		background: $disabled;
+		background: darken($disabled, 20%);
 	}
 }
 

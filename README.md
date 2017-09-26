@@ -1,39 +1,33 @@
 # CastleCSS Forms
+Quickly add forms with this CastleCSS module.
+
 ![CastleCSS logo @CastleCss.com](https://www.doordarius.nl/castlecss-logo-250.png)
 
 ## CastleCSS Framework
-The form files are part of the [CastleCSS Package](https://github.com/CastleCSS/castlecss)
+The form files are part of the [CastleCSS Package](https://github.com/CastleCSS/castlecss).
 
 ## How to install
-- Install via [npm](https://www.npmjs.com/): ```npm install castlecss-forms```
+- Download the [CastleCSS Boilerplate](https://www.github.com/CastleCSS/castlecss-boilerplate). All Packages are included + examples and project setup
+- Install via [npm](https://www.npmjs.com/): ```npm install castlecss-forms -S``` (see [below](#getting-started) for a step-by-step guide)
 - Require it in your own npm package
 - Download or clone the package
 
 ## Updating files
-CastleCSS is built so it's easy to update, you can just download make it your own as long as you don't ovewrite the core files. 
+CastleCSS is built in such a way that it's easy to update, you can just download and make it your own as long as you don't overwrite the core files. To update the forms module, just run:
 
 ```npm update castlecss-forms```
 
 ## Documentation and examples
-You can find the documentation and examples at http://www.castlecss.com and [castlecss-docs](https://github.com/CastleCSS/castlecss-docs)
+You can find the documentation and examples for CastleCSS Forms [here](http://www.castlecss.com/forms.html). You can also download the [CastleCSS Boilerplate](https://github.com/castlecss/castlecss-boilerplate), which includes CastleCSS Forms.
 
 
-## Adjusting the variables
-Because of the unique update-able setup of CastleCSS you need a seperate variable file to overwrite the default CastleCSS variables. There are a few ways to do this: 
+## Getting started
 
-- Use the [boilerplate](https://github.com/CastleCSS/castlecss-boilerplate/) which provides the complete distribution of CastleCSS Forms
-- Copy variables.scss from /node_modules/castlecss-core/sass/variables.scss into your own scss folder and include it into your main.scss
-- Copy the example from the [documentation](http://castlecss.com/forms.html) into your own variables.scss and include it into your main.scss
-
-## Dependencies
-Because CastleCSS Forms uses jQuery as dependency, the distributions contain jQuery. There is however a possibility to make use of the jQuery version of your choice, by making use of the no.vendors distributions.
-The no.vendor distributions work, as long as the jQuery variable is defined in the global scope.
-
-## Basic structure
-The basis structure for your website should look similar like this:
+Your project should have a setup similar to the example below (included in the [CastleCSS Boilerplate](https://github.com/CastleCSS/castlecss-boilerplate)).
+This way you make sure your own variables overwrite the castle-core variables and your setup is still updatable.
 
 ```
-| Project directory/
+| Your project directory/
 |
 |-- node_modules/
 | | -- castlecss-core/
@@ -59,14 +53,56 @@ The basis structure for your website should look similar like this:
 |-- package.json
 ```
 
-## Usage
-There are a couple of different ways to make use of the CastleCSS Forms library.
+### 1. Include CastleCSS Forms in your project
+To do this, run the following command in your CLI (make sure you have [Node.js](https://nodejs.org/en/download/) installed on your computer):
 
-### Include as seperate modules
-To make use of the modules seperately, use the following scripts:
+```npm install castlecss-forms -S```
+
+All dependencies needed in order for CastleCSS Forms to run properly are now available (in the 'node_modules' folder).
+
+
+### 2. Include CastleCSS Forms in your sass structure
+To enable CastleCSS Forms it is essential that you include the corresponding main.scss file in your project's own sass structure. Essentially, your 'main' sass file should have a setup similar to this (included in the [CastleCSS Boilerplate](https://github.com/CastleCSS/castlecss-boilerplate)): 
 
 ```
-<script type="text/javascript" src="/path/to/scripts/Vendors.bundle.js"></script>
+/*  core variable files */
+@import "node_modules/castlecss-core/sass/variables";
+
+/*  Your own variables so they overwrite the core */
+@import "variables";
+
+/*  rest of core files */
+@import "node_modules/castlecss-core/sass/main";
+@import "node_modules/castlecss-forms/sass/main";
+
+ 
+/*  Include your own files below this line
+    --------------------------------------
+*/
+```
+
+### 3. Include script library
+
+_Please not that **[jQuery](https://jquery.com/download/) is required** in order for CastleCSS Forms to work. Make sure the CastleCSS Forms scripts load after jQuery is loaded_.
+
+We propose three ways to make use of the CastleCSS Forms script library, which will be listed below. CastleCSS Forms consists of multiple modules, which can be used separately if desired. 
+
+#### Include all Forms modules
+To make use of all the modules, simply include the following scripts (that are located in the 'dist' folder):
+
+```
+<script type="text/javascript" src="/path/to/scripts/Forms.min.js"></script>
+<script type="text/javascript">
+	$(function () {
+		CastleCSS_Forms_Forms();
+	});
+</script>
+```
+
+#### Include as separate modules
+To make use of the modules separately, use the following scripts (that are located in the 'dist' folder):
+
+```
 <!--- The modules of your choice --->
 <script type="text/javascript" src="/path/to/scripts/Select.min.js"></script>
 <script type="text/javascript" src="/path/to/scripts/FileInput.min.js"></script>
@@ -74,22 +110,15 @@ To make use of the modules seperately, use the following scripts:
 
 <script type="text/javascript">
 	/* For example */
-	CastleCSS_Forms_Select();
+	$(function () {
+		CastleCSS_Forms_Select();
+	});
 </script>
 ```
 
-### Include
-To make use of all the modules, simply include the following scripts:
 
-```
-<script type="text/javascript" src="/path/to/scripts/Vendors.bundle.js"></script>
-<script type="text/javascript" src="/path/to/scripts/Forms.min.js"></script>
-<script type="text/javascript">
-	CastleCSS_Forms_Forms();
-</script>
-```
 
-### Require
+#### Require
 It is possible to require CastleCSS Forms into your project.
 
 ```
@@ -98,13 +127,13 @@ var castlecss_forms = require('castlecss-forms');
 /* Use all modules */
 castlecss_forms.forms();
 
-/* Use seperate modules */
+/* Use separate modules */
 castlecss_forms.select();
 castlecss_forms.fileinput();
 ```
 
-### Selectors
-The CastleCSS Forms library by default searches for the following elements:
+#### Selectors
+By default, the CastleCSS Forms library searches for the following elements:
 
 ```
 ...
@@ -120,7 +149,7 @@ The CastleCSS Forms library by default searches for the following elements:
 </select>
 ```
 
-### Configuration
+#### Configuration
 By default, the CastleCSS Forms library uses the CastleCSS selectors.
 It is possible to configure selectors of your own choice. Just add the following configuration:
 
@@ -133,3 +162,11 @@ CastleCSS_Forms_Forms({
 CastleCSS_Forms_Select('.yourOwnSelector');
 CastleCSS_Forms_FileInput('.yourOwnSelector');
 ```
+
+## Roadmap
+We're currently working hard on making the CastleCSS expansions and improvements. CastleCSS is made to serve as lightweight basis for tailor made software but we do want to give you the option to install a few modules to make your life easier.
+
+Please see the [ROADMAP.MD from the CastleCSS Meta Package](https://github.com/CastleCSS/castlecss/blob/master/ROADMAP.md) for our current plans for the future.
+
+## Contributing
+Want to contribute? We'd love your help, please take a look at the roadmap or submit new suggestions.

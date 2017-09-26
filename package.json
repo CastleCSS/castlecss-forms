@@ -1,6 +1,6 @@
 {
   "name": "castlecss-forms",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Easy to use forms for CastleCSS",
   "main": "index.js",
   "scripts": {
@@ -11,11 +11,13 @@
     "url": "git+https://github.com/CastleCSS/castlecss-forms.git"
   },
   "keywords": [
-    "CastleCSS"
+    "CastleCSS",
+    "forms"
   ],
   "author": "Maarten van der Haar <maarten@denieuwezaak.nl> (http://www.castlecss.com)",
   "contributors": [
-    "Darius Rosendahl <maarten@denieuwezaak.nl> (http://www.castlecss.com)",
+    "Darius Rosendahl <darius@denieuwezaak.nl> (http://www.castlecss.com)",
+    "Paul Stegeman <paul@denieuwezaak.nl> (http://www.castlecss.com)",
     "Björn Borneman <bjorn@denieuwezaak.nl> (http://www.castlecss.com)",
     "Amber Brookhuis <darius@denieuwezaak.nl> (http://www.castlecss.com)"
   ],
@@ -25,12 +27,14 @@
   },
   "homepage": "https://github.com/CastleCSS/castlecss-forms#readme",
   "dependencies": {
-    "castlecss-core": "^2.3.0",
-    "jquery": "^3.1.1"
+    "jquery": "^3.1.1",
+    "webpack": "^3.6.0"
   },
   "devDependencies": {
-    "webpack": "^2.2.1",
-    "eslint": "^3.15.0",
+    "eslint": "^4.7.2",
     "eslint-loader": "^1.6.1"
+  },
+  "peerDependencies": {
+    "castlecss-core": "^2.4.0"
   }
 }
