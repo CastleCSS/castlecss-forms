@@ -12,12 +12,11 @@
 var $ = require('jquery');
 
 function wrapSelects(selector) {
-	$(selector).each(function() {
+	$(selector).each(function () {
 		var $this = $(this);
-
-		if ( $this.parent('.select').length == 0 ) {
+		if ($this.parent('.select').length == 0) {
 			$this.wrap('<div class="select">');
-			$('.select').append('<div class="select-arrow">')
+			$this.parent('.select').append('<div class="select-arrow">');
 		}
 	});
 }
