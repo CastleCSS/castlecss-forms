@@ -81,7 +81,7 @@
 	}
 
 	textarea {
-		padding-bottom: $padding-default;
+		padding-top: $padding-default * 1.5;
 		box-sizing: border-box;
 	}
 }
@@ -94,8 +94,7 @@
 				@extend %label-top;
 			}
 
-			input,
-			textarea {
+			input {
 				padding: 12px $padding-default / 2 0 $padding-default;
 			}
 		}
@@ -108,8 +107,7 @@
 				@extend %label-bottom;
 			}
 
-			input,
-			textarea {
+			input {
 				padding: 0 $padding-default / 2 12px $padding-default;
 			}
 		}
@@ -122,8 +120,7 @@
 				@extend %label-above;
 			}
 
-			input,
-			textarea {
+			input {
 				padding: 0 $padding-default / 2 0 $padding-default;
 			}
 		}
@@ -137,6 +134,11 @@
 .form-field {
 	label[for] {
 		@extend %label-default;
+	}
+
+	label[for="textarea"] {
+		top: 12px;
+		transform: none;
 	}
 
 	&.has-focus,
@@ -153,8 +155,7 @@
 				@extend %label-top;
 			}
 
-			input,
-			textarea {
+			input {
 				padding: 12px $padding-default / 2 0 $padding-default;
 			}
 		}
@@ -168,8 +169,7 @@
 				@extend %label-bottom;
 			}
 
-			input,
-			textarea {
+			input {
 				padding: 0 $padding-default / 2  12px $padding-default;
 			}
 		}
@@ -183,8 +183,7 @@
 				@extend %label-above;
 			}
 
-			input,
-			textarea {
+			input {
 				padding: 0 $padding-default / 2 0 $padding-default;
 			}
 		}
