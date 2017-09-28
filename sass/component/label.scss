@@ -3,117 +3,194 @@
 ::-webkit-input-placeholder {
 	opacity: 0;
 }
+
 :-moz-placeholder,
 ::-moz-placeholder {
 	opacity: 0;
 }
-:-ms-input-placeholder{
+
+:-ms-input-placeholder {
 	color: transparent;
 }
 /*! autoprefixer: on */
+
+/* Placeholders Start */
+%label-default {
+	z-index: 2;
+	transition: 0.001s ease opacity;
+	position: absolute;
+	color: $input-label-color;
+	left: $margin-default;
+	top: 50%;
+	transform: translateY(-50%);
+	font-weight: normal;
+	margin: 0;
+}
+%label-active {
+	transform: translateY(0);
+	color: $input-label-color-focus;
+	font-size: 65%;
+	line-height: 22px;
+	opacity: 0;
+}
+%label-top {
+	top: 0;
+	opacity: 1;
+}
+%label-bottom {
+	top: auto;
+	bottom: 0;
+	opacity: 1;
+}
+%label-above {
+	top: auto;
+	bottom: 100%;
+	opacity: 1;
+}
+/* Placeholders End */
 
 [class^="label-"],
 [class*=" label-"] {
 	.input-combined {
 		~ label[for] {
-			margin-left: $margin-default*3;
+			margin-left: $margin-default * 3;
 		}
+
 		&.has-focus,
 		&.has-value {
 			label[for] {
-				margin-left: $margin-default*3;
+				margin-left: $margin-default * 3;
 			}
+
 			input {
-				padding: 0 $padding-default/2 12px $padding-default;
+				padding: 0 $padding-default / 2 12px $padding-default;
 			}
 		}
 	}
+
 	.input-icon {
 		label[for] {
 			left: $margin-default*4.5;
 		}
 	}
+
 	input,
 	textarea {
 		vertical-align: top;
 		padding: $padding-default;
 	}
+
 	textarea {
 		padding-bottom: $padding-default;
 		box-sizing: border-box;
 	}
 }
+
+.form-fields {
+	&.label-top {
+		.has-focus,
+		.has-value {
+			label[for] {
+				@extend %label-top;
+			}
+
+			input,
+			textarea {
+				padding: 12px $padding-default / 2 0 $padding-default;
+			}
+		}
+	}
+
+	&.label-bottom {
+		.has-focus,
+		.has-value {
+			label[for] {
+				@extend %label-bottom;
+			}
+
+			input,
+			textarea {
+				padding: 0 $padding-default / 2 12px $padding-default;
+			}
+		}
+	}
+
+	&.label-above {
+		.has-focus,
+		.has-value {
+			label[for] {
+				@extend %label-above;
+			}
+
+			input,
+			textarea {
+				padding: 0 $padding-default / 2 0 $padding-default;
+			}
+		}
+	}
+
+	.form-field {
+		@extend .form-field;
+	}
+}
+
 .form-field {
 	label[for] {
-		z-index: 2;
-		transition: 0.001s ease opacity;
-		position: absolute;
-		color: $input-label-color;
-		left: $margin-default;
-		top: 50%;
-		transform: translateY(-50%);
-		font-weight: normal;
-		margin: 0;
+		@extend %label-default;
 	}
+
 	&.has-focus,
 	&.has-value {
 		label[for] {
-			transform: translateY(0);
-			color: $input-label-color-focus;
-			font-size: 65%;
-			line-height: 22px;
-			opacity: 0;
+			@extend %label-active;
 		}
 	}
+
 	&.label-top {
-		line-height: 1;
-
 		&.has-focus,
 		&.has-value {
-			label[for] {
-				top: 0;
-				opacity: 1;
+			> label[for] {
+				@extend %label-top;
 			}
 
 			input,
 			textarea {
-				padding: 12px $padding-default/2 0 $padding-default;
+				padding: 12px $padding-default / 2 0 $padding-default;
 			}
 		}
 	}
+
 	&.label-bottom {
-		line-height: 1;
 
 		&.has-focus,
 		&.has-value {
-			label[for] {
-				top: auto;
-				bottom: 0;
-				opacity: 1;
+			> label[for] {
+				@extend %label-bottom;
 			}
+
 			input,
 			textarea {
-				padding: 0 $padding-default/2 12px $padding-default;
+				padding: 0 $padding-default / 2  12px $padding-default;
 			}
 		}
 	}
+
 	&.label-above {
-		line-height: 1;
 
 		&.has-focus,
 		&.has-value {
-			label[for] {
-				top: auto;
-				bottom: 100%;
-				opacity: 1;
+			> label[for] {
+				@extend %label-above;
 			}
+
 			input,
 			textarea {
-				padding: 0 $padding-default/2 0 $padding-default;
+				padding: 0 $padding-default / 2 0 $padding-default;
 			}
 		}
 	}
 }
+
 .label-left {
 	.input-indicator {
 		left: inherit;
