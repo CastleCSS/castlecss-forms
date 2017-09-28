@@ -67,60 +67,12 @@
 			}
 		}
 	}
-<<<<<<< HEAD
-=======
-}
-
-.form-field {
-
-	label[for] {
-		z-index: 2;
-		transition: 0.001s ease opacity;
-		position: absolute;
-		color: $input-label-color;
-		left: $margin-default;
-		top: 50%;
-		transform: translateY(-50%);
-		font-weight: normal;
-		margin: 0;
-	}
-
-	&.has-value {
-		line-height: 15px;
-	}
-
-}
-
-.form-field {
-
-	label[for] {
-		z-index: 2;
-		transition: 0.001s ease opacity;
-		position: absolute;
-		color: $input-label-color;
-		left: $margin-default;
-		top: 50%;
-		transform: translateY(-50%);
-		font-weight: normal;
-		margin: 0;
-	}
-
-	&.has-value {
->>>>>>> origin/develop
 
 	.input-icon {
 		label[for] {
 			left: $margin-default*4.5;
 		}
 	}
-<<<<<<< HEAD
-=======
-}
-
-.label-above,
-.label-bottom,
-.label-top {
->>>>>>> origin/develop
 
 	input,
 	textarea {
@@ -201,16 +153,9 @@
 				@extend %label-top;
 			}
 
-<<<<<<< HEAD
 			input,
 			textarea {
 				padding: 12px $padding-default / 2 0 $padding-default;
-=======
-			label[for] {
-				color: $input-label-color-focus;
-				font-size: 65%;
-				line-height: 22px;
->>>>>>> origin/develop
 			}
 		}
 	}
@@ -230,25 +175,8 @@
 		}
 	}
 
-<<<<<<< HEAD
 	&.label-above {
 
-=======
-.label-bottom {
-	.form-field {
-		&.has-focus,
-		&.has-value {
-			label[for] {
-				top: 100%;
-			}
-		}
-	}
-}
-
-.label-top {
-
-	.form-field {
->>>>>>> origin/develop
 		&.has-focus,
 		&.has-value {
 			> label[for] {
