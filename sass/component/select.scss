@@ -25,11 +25,9 @@
 		&:focus {
 
 			~ .select-arrow {
-				// transform: translateY(-50%);
-
 				&:after {
-					transform: rotate(-90deg);
-					margin-left: -3px;
+					margin-left: 3px;
+					transform: rotate(90deg);
 				}
 			}
 		}
@@ -56,7 +54,7 @@
 	transform: translateY(-50%);
 	transition: $input-transition;
 	pointer-events: none;
-	
+
 	&:after {
 		box-sizing: border-box;
 		text-align: center;
@@ -64,7 +62,7 @@
 		display: block;
 		width: $input-height; height: $input-height;
 		line-height: $input-height;
-		transform: rotate(90deg);
+		transform: rotate(-90deg);
 		transform-origin: center;
 	}
 }
