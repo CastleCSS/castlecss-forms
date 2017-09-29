@@ -24,27 +24,31 @@
 	transform: translateY(-50%);
 	font-weight: normal;
 	margin: 0;
-	transition: 0.1s ease all;
+	transition: 0.5s ease all;
+	// transition: 0.2s ease all;
+	cursor: text;
 }
 %label-active {
-	transform: translateY(0);
+	top: 50%;
+	transform: translateY(-50%);
+	opacity: 0;
 	color: $input-label-color-focus;
 	font-size: 65%;
 	line-height: 22px;
-	opacity: 0;
 }
 %label-top {
 	top: 0;
+	transform: translateY(0);
 	opacity: 1;
 }
 %label-bottom {
-	top: auto;
-	bottom: 0;
+	top: 100%;
+	transform: translateY(-100%);
 	opacity: 1;
 }
 %label-above {
-	top: auto;
-	bottom: 100%;
+	top: 0;
+	transform: translateY(-100%);
 	opacity: 1;
 }
 /* Placeholders End */
@@ -87,6 +91,8 @@
 }
 
 .form-fields {
+
+
 	&.label-top {
 		.has-focus,
 		.has-value {
