@@ -122,9 +122,12 @@
 				@extend %label-active-transition;
 			}
 
-			input,
-			textarea {
+			input {
 				padding: 0 $padding-default / 2 12px $padding-default;
+			}
+
+			textarea {
+				padding-bottom: 18px;
 			}
 		}
 	}
