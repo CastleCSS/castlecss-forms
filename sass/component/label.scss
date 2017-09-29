@@ -16,40 +16,44 @@
 
 /* Placeholders Start */
 %label-default {
-	z-index: 2;
-	position: absolute;
 	color: $input-label-color;
-	left: $margin-default;
-	top: 50%;
-	transform: translateY(-50%);
-	font-weight: normal;
-	margin: 0;
-	transition: 0.5s ease all;
-	// transition: 0.2s ease all;
 	cursor: text;
-}
-%label-active {
+	font-weight: normal;
+	left: $margin-default;
+	margin: 0;
+	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
+	z-index: 2;
+}
+
+%label-active-static {
+	color: $input-label-color-focus;
 	opacity: 0;
+	transition: none;
+}
+
+%label-active-transition {
+	opacity: 1;
 	color: $input-label-color-focus;
 	font-size: 65%;
 	line-height: 22px;
+	transform: translateY(-50%);
+	transition: 0.2s ease all;
 }
+
 %label-top {
 	top: 0;
 	transform: translateY(0);
-	opacity: 1;
 }
+
 %label-bottom {
 	top: 100%;
 	transform: translateY(-100%);
-	opacity: 1;
 }
 %label-above {
 	top: 0;
 	transform: translateY(-100%);
-	opacity: 1;
 }
 /* Placeholders End */
 
@@ -80,13 +84,13 @@
 
 	input,
 	textarea {
-		vertical-align: top;
 		padding: $padding-default;
+		vertical-align: top;
 	}
 
 	textarea {
-		padding-bottom: $padding-default;
 		box-sizing: border-box;
+		padding-bottom: $padding-default;
 	}
 }
 
@@ -98,6 +102,7 @@
 		.has-value {
 			label[for] {
 				@extend %label-top;
+				@extend %label-active-transition;
 			}
 
 			input,
@@ -112,6 +117,7 @@
 		.has-value {
 			label[for] {
 				@extend %label-bottom;
+				@extend %label-active-transition;
 			}
 
 			input,
@@ -126,6 +132,7 @@
 		.has-value {
 			label[for] {
 				@extend %label-above;
+				@extend %label-active-transition;
 			}
 
 			input,
@@ -148,7 +155,7 @@
 	&.has-focus,
 	&.has-value {
 		label[for] {
-			@extend %label-active;
+			@extend %label-active-static;
 		}
 	}
 
@@ -157,6 +164,7 @@
 		&.has-value {
 			> label[for] {
 				@extend %label-top;
+				@extend %label-active-transition;
 			}
 
 			input,
@@ -172,6 +180,7 @@
 		&.has-value {
 			> label[for] {
 				@extend %label-bottom;
+				@extend %label-active-transition;
 			}
 
 			input,
@@ -187,6 +196,7 @@
 		&.has-value {
 			> label[for] {
 				@extend %label-above;
+				@extend %label-active-transition;
 			}
 
 			input,
