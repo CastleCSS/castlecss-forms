@@ -96,7 +96,6 @@
 
 .form-fields {
 
-
 	&.label-top {
 		.has-focus,
 		.has-value {
@@ -105,9 +104,12 @@
 				@extend %label-active-transition;
 			}
 
-			input,
-			textarea {
+			input {
 				padding: 12px $padding-default / 2 0 $padding-default;
+			}
+
+			textarea {
+				padding: 18px $padding-default / 2 0 $padding-default;
 			}
 		}
 	}
@@ -135,9 +137,12 @@
 				@extend %label-active-transition;
 			}
 
-			input,
-			textarea {
+			input {
 				padding: 0 $padding-default / 2 0 $padding-default;
+			}
+
+			textarea {
+				padding: 12px $padding-default / 2 0 $padding-default;
 			}
 		}
 	}
@@ -150,6 +155,11 @@
 .form-field {
 	label[for] {
 		@extend %label-default;
+	}
+
+	label[for="textarea"] {
+		transform: translateY(0);
+		top: $margin-default;
 	}
 
 	&.has-focus,
@@ -167,9 +177,12 @@
 				@extend %label-active-transition;
 			}
 
-			input,
-			textarea {
+			input {
 				padding: 12px $padding-default / 2 0 $padding-default;
+			}
+
+			textarea {
+				padding: 18px $padding-default / 2 0 $padding-default;
 			}
 		}
 	}
