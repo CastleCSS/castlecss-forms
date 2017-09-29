@@ -26,6 +26,7 @@
 
 			~ .select-arrow {
 				&:after {
+					margin-left: 3px;
 					transform: rotate(90deg);
 				}
 			}
