@@ -157,7 +157,6 @@
 		@extend %label-default;
 	}
 
-	&.has-focus,
 	&.has-value {
 		label[for] {
 			@extend %label-active-static;
