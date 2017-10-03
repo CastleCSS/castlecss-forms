@@ -160,11 +160,6 @@
 		@extend %label-default;
 	}
 
-	label[for="textarea"] {
-		transform: translateY(0);
-		top: $margin-default;
-	}
-
 	&.has-focus,
 	&.has-value {
 		label[for] {
@@ -223,7 +218,17 @@
 	}
 }
 
+.form-textarea {
+
+	label[for] {
+		transform: translateY(0);
+		top: $margin-default;
+	}
+
+}
+
 .label-left {
+
 	.input-indicator {
 		left: inherit;
 		right: 0;
