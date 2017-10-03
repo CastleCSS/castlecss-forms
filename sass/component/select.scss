@@ -26,8 +26,8 @@
 
 			~ .select-arrow {
 				&:after {
-					margin-left: 3px;
-					transform: rotate(90deg);
+					margin-left: -3px;
+					transform: rotate(-90deg);
 				}
 			}
 		}
@@ -56,12 +56,12 @@
 	pointer-events: none;
 
 	&:after {
-		box-sizing: border-box;
-		text-align: center;
 		content: $select-arrow;
+		box-sizing: border-box;
 		display: block;
 		width: $input-height; height: $input-height;
 		line-height: $input-height;
+		text-align: center;
 		transform: rotate(90deg);
 		transform-origin: center;
 	}
