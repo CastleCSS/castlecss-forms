@@ -27,8 +27,7 @@
 
 			~ .select-arrow {
 				&:after {
-					margin-left: -3px;
-					transform: rotate(-90deg);
+					transform: rotate(90deg) scaleX(-1);
 				}
 			}
 		}
@@ -50,20 +49,18 @@
 }
 
 .select-arrow {
-	position: absolute; top: 50%; right: 0;
+	position: absolute; top: 0;  right: 0;
 	width: $input-height; height: $input-height;
-	transform: translateY(-50%);
 	transition: $input-transition;
+	line-height: $input-height;
+	text-align: center;
 	pointer-events: none;
 
 	&:after {
 		content: $select-arrow;
-		box-sizing: border-box;
 		display: block;
 		width: $input-height; height: $input-height;
-		line-height: $input-height;
-		text-align: center;
-		transform: rotate(90deg);
+		transform: rotate(90deg) scaleX(1);
 		transform-origin: center;
 	}
 }
