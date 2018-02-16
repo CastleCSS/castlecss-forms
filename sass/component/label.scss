@@ -23,10 +23,12 @@
 	top: 50%;
 	transform: translateY(-50%);
 	z-index: 2;
+	pointer-events: none;
 }
 
 %label-active-static {
-	display: none;
+	color: $input-label-color-focus;
+	opacity: 0;
 	transition: none;
 }
 
