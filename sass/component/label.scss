@@ -152,7 +152,7 @@
 }
 
 .form-field {
-	label[for] {
+	label[for]:not(.input-control) {
 		@extend %label-default;
 	}
 
