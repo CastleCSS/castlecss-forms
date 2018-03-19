@@ -59,13 +59,13 @@
 [class^="label-"],
 [class*=" label-"] {
 	.input-combined {
-		~ label[for] {
+		~ label[for]:not(.input-control) {
 			margin-left: $margin-default * 3;
 		}
 
 		&.has-focus,
 		&.has-value {
-			label[for] {
+			label[for]:not(.input-control) {
 				margin-left: $margin-default * 3;
 			}
 
@@ -98,7 +98,7 @@
 	&.label-top {
 		.has-focus,
 		.has-value {
-			label[for] {
+			label[for]:not(.input-control) {
 				@extend %label-top;
 				@extend %label-active-transition;
 			}
@@ -116,7 +116,7 @@
 	&.label-bottom {
 		.has-focus,
 		.has-value {
-			label[for] {
+			label[for]:not(.input-control) {
 				@extend %label-bottom;
 				@extend %label-active-transition;
 			}
@@ -134,7 +134,7 @@
 	&.label-above {
 		.has-focus,
 		.has-value {
-			label[for] {
+			label[for]:not(.input-control) {
 				@extend %label-above;
 				@extend %label-active-transition;
 			}
@@ -152,12 +152,12 @@
 }
 
 .form-field {
-	label[for] {
+	label[for]:not(.input-control) {
 		@extend %label-default;
 	}
 
 	&.has-value {
-		label[for] {
+		label[for]:not(.input-control) {
 			@extend %label-active-static;
 		}
 	}
@@ -165,7 +165,7 @@
 	&.label-top {
 		&.has-focus,
 		&.has-value {
-			> label[for] {
+			> label[for]:not(.input-control) {
 				@extend %label-top;
 				@extend %label-active-transition;
 			}
@@ -184,7 +184,7 @@
 
 		&.has-focus,
 		&.has-value {
-			> label[for] {
+			> label[for]:not(.input-control) {
 				@extend %label-bottom;
 				@extend %label-active-transition;
 			}
@@ -200,7 +200,7 @@
 
 		&.has-focus,
 		&.has-value {
-			> label[for] {
+			> label[for]:not(.input-control) {
 				@extend %label-above;
 				@extend %label-active-transition;
 			}
