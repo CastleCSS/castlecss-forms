@@ -25,6 +25,10 @@
 	z-index: 2;
 	pointer-events: none;
 }
+%label-default-textarea {
+	@extend %label-default;
+	top: 0;
+}
 
 %label-active-static {
 	color: $input-label-color-focus;
@@ -211,15 +215,15 @@
 			}
 		}
 	}
-}
 
-.form-textarea {
+	&.form-textarea {
 
-	label[for] {
-		transform: translateY(0);
-		top: $margin-default;
+		label[for] {
+			transform: translateY(0);
+			top: $margin-default;
+		}
+
 	}
-
 }
 
 .label-left {
